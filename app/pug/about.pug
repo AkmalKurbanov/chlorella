@@ -1,0 +1,65 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | About
+block main
+  .wrapper
+    .content
+      
+      include includes/header
+      include includes/slider
+
+      .text-img-wrap
+        .container
+          .text-img.d-flex.aling-center.justify-between
+            .text-img__txt 
+              .title.fw-bold About company
+              p NWORK International was established at the beginning of 2016 as a result of professional efforts of 7 years, laying down the foundations in 2009. Our company has entered the sector with a high amount of investments by a professional team engaging in the real estate, tourism and a few commercial areas.
+            
+            .text-img__img-wrap
+              .text-img__img.d-if.align-center.justify-center 
+                img(src="images/dist/text-img1.webp", alt="")
+             
+          
+          .text-img.d-flex.aling-center.justify-between
+            .text-img__txt 
+              .title.fw-bold About company
+              p NWORK International was established at the beginning of 2016 as a result of professional efforts of 7 years, laying down the foundations in 2009. Our company has entered the sector with a high amount of investments by a professional team engaging in the real estate, tourism and a few commercial areas.
+            
+            .text-img__img-wrap
+              .text-img__img.d-if.align-center.justify-center 
+                img(src="images/dist/text-img2.webp", alt="")
+      
+      include includes/faq
+      include includes/join
+      
+      .studies.pt-35.pb-25
+        .container
+          .title PROFESSIONAL PRODUCT STUDIES
+          
+          .announcement-wrap
+            each announcement,index in[{name: 'R & D', desc: 'Our products are produced and developed as a result of 7 years of professional arge habit.'},{name: 'PROFESSIONAL',desc:'Real estate was established by a professional team working in commercial areas sm.'},{name: 'PRODUCTION',desc:'All products are produced completely under the control of ouruntil they are made.'}]
+              a.announcement-block(href="#") 
+                .announcement-block__img.mb-20.d-flex.align-center.justify-center
+                  img(src="images/dist/announcement"+(index+1)+".webp", alt="")
+                .announcement-block__name.mb-10.fw-bold=announcement.name
+                p=announcement.desc
+          
+          .text-center.mt-5.mb-25
+            a.btn(href="#") Read All The News
+
+
+    include includes/contacts
+    include includes/footer
+
+
+  include includes/scripts 
+  include includes/map-script 

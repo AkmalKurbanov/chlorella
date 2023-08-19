@@ -1,0 +1,81 @@
+.slider
+  margin-bottom: rem(70)
+  
+  @media (max-width: 1400px)
+    width: rem(1080)
+    margin: 0 auto rem(70)
+
+ 
+  @include lg
+    width: 100%  
+    
+  @include xs
+    margin-bottom: rem(20)
+
+  .container
+    position: relative
+
+  &__wrap
+    position: relative
+    border-radius: rem(30)
+    overflow: hidden
+
+  &__img
+    @include aic-jcc
+
+    @include xs
+      min-height: rem(200)
+
+    img
+      @include xs
+        position: absolute
+        object-fit: cover
+        height: 100%
+  
+  &__nav
+    width: calc( 100% + 120px )
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1
+
+    @media (max-width: 1250px)
+      width: 100%
+
+    @include xs  
+      width: calc( 100% - 20px )
+
+
+  &__nav-btn
+    background: $mc
+    border-radius: 100%
+    width: rem(35)
+    height: rem(35)
+    @include aic-jcc
+    cursor: pointer
+
+    .icon
+      transition: $tr
+
+    &.prev-btn
+      &:hover
+        .icon
+          transform: translateX(-3px)
+
+    &.next-btn
+      &:hover
+        .icon
+          transform: translateX(3px)
+
+  .swiper-pagination
+    position: absolute
+    bottom: rem(20)
+    
+    @include xs
+      bottom: rem(8)
+
+    
+    .swiper-pagination-bullets
+      span
+        background: $wc

@@ -1,0 +1,79 @@
+extends layouts/main
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Home
+block main
+  include includes/menu
+  .wrapper
+    .content
+      
+      
+      include includes/header
+      include includes/slider
+
+      .text-img-wrap
+        .container
+          include includes/text-img
+
+
+      .popular-products
+        .container
+          .swiper.slider-products-js
+            .swiper-wrapper
+              each cart in[1,2,3,4]
+                .swiper-slide 
+                  .card
+                    .card__top 
+                      a.card__img.mb-10(href="#") 
+                        img(src="images/dist/card.webp", alt="")
+                      .card__info.text-center
+                        a.card__name.mb-10(href="#")  Omega 3
+                    .card__bottom.text-center 
+                      .card__price.fw-bold 124 $
+                
+            .swiper-pagination 
+                   
+              
+          
+          .d-flex.justify-center.mt-35     
+            a.btn(href="#") Все продукты     
+
+      
+      
+
+
+      include includes/certificate
+      include includes/faq
+      include includes/partners
+      include includes/join
+      
+      .studies.pt-35.pb-25
+        .container
+          .title PROFESSIONAL PRODUCT STUDIES
+          
+          .announcement-wrap
+            each announcement,index in[{name: 'R & D', desc: 'Our products are produced and developed as a result of 7 years of professional arge habit.'},{name: 'PROFESSIONAL',desc:'Real estate was established by a professional team working in commercial areas sm.'},{name: 'certificate',desc:'All products are produced completely under the control of ouruntil they are made.'}]
+              .announcement-block 
+                a.announcement-block__img.mb-20.d-flex.align-center.justify-center(href="#") 
+                  img(src="images/dist/announcement"+(index+1)+".webp", alt="")
+                a.announcement-block__name.mb-10.fw-bold(href="#")=announcement.name 
+                p=announcement.desc
+          
+          .text-center.mt-5.mb-25
+            a.btn(href="#") Read All The News
+
+
+    include includes/contacts
+    include includes/footer
+
+
+  include includes/scripts 
+  include includes/map-script 

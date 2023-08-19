@@ -1,0 +1,89 @@
+.announcement-wrap
+  @include fww
+
+.announcement-block
+  padding: rem(20)
+  border-radius: rem(10)
+  background: $wc
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.35)
+  text-decoration: none
+  color: $sc
+  display: inline-block
+  width: calc( 33.33% - 20px )
+  margin-right: rem(30)
+  margin-bottom: rem(30)
+
+  @include md
+    width: calc( 33.33% - 10px )
+    margin-right: rem(15)
+    margin-bottom: rem(15)
+
+  @include sm
+    width: 100%  
+    margin-bottom: rem(25)
+    margin-right: 0
+
+
+  
+  &:nth-child(3n)
+    margin-right: 0
+    
+    
+  &__img
+    border-radius: rem(12) 
+    overflow: hidden
+    position: relative
+    transition: $tr
+
+    @include xs
+      max-height: rem(200)
+      min-height: rem(200)
+
+    img
+      @include xs
+        position: absolute
+        object-fit: cover
+        height: 100%
+
+    &:before
+      position: absolute
+      top: 0
+      left: -75%
+      z-index: 2
+      display: block
+      content: ""
+      width: 50%
+      height: 100%
+      background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3))
+      transform: skewX(-25deg) 
+
+    @keyframes shine 
+      to 
+        left: 125%
+        
+    
+  &__name
+    font-size: rem(20)
+    transition: $tr
+    display: inline-block
+    color: $sc
+    text-decoration: none
+
+    @include lg    
+      font-size: rem(16)
+
+    @include sm
+      font-size: rem(18)
+
+
+    &:hover
+      color: $mc
+
+  p
+    font-size: rem(14)  
+
+  &:hover
+    .announcement-block__img
+      transform: translateY(-5px  )
+      &:before
+        animation: shine .85s   

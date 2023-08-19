@@ -1,0 +1,73 @@
+extends layouts/without-map
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Blog detail
+block main
+  .wrapper
+    .content
+      
+      include includes/header_without-margin
+
+      .blog
+        .blog__banner.d-flex.align-center.mb-30(style="background-image: url('images/dist/blog_banner.webp')")
+          .container
+            .blog__banner-content
+              .title.fw-bold Blog detail
+              p Read our blog, stay up to date with the latest news
+      .container
+        .breadcrumbs
+          ul 
+            li 
+              a(href="#") Homepage
+            li
+              a(href="#") Blog
+            li Blog detail
+
+      .blog
+        .container
+          .blog__detail
+            .text-img-wrap
+              .text-img.d-flex.aling-center.justify-between
+                .text-img__txt 
+                  .title Opening of a mosque / Anas bin Malik
+                  p Lorem ipsum dolor sit amet consectetur. Vulputate id ultrices amet tempus auctor. Lobortis facilisi mattis congue pharetra lorem. Sem pellentesque sit enim sapien. Varius orci pharetra sem volutpat malesuada viverra. Aliquam ultricies elementum nulla morbi varius adipiscing. Accumsan sapien ac rutrum nec id elementum fermentum purus sed. Egestas habitant amet sit nisl id vivamus elementum in. Fames curabitur diam pellentesque turpis sed etiam etiam diam duis. Nunc a semper vitae amet amet dictum sed vitae. Libero massa semper tempor facilisis elit turpis sem bibendum. Facilisis eget adipiscing vulputate fringilla molestie amet aliquam. In in lobortis vestibulum vestibulum vulputate metus eget quam. 
+                .text-img__img-wrap
+                  .text-img__img.d-if.align-center.justify-center 
+                    img(src="images/dist/blog.webp", alt="")
+                
+              
+              .text-img.d-flex.aling-center.justify-between
+                .text-img__txt 
+                  .title Opening of a mosque / Anas bin Malik
+                  p Eget risus condimentum at nibh risus eleifend ac sed pulvinar. Justo in at aliquam sit aliquet commodo velit nibh. Pretium lacus neque sem interdum sollicitudin pulvinar ornare tincidunt. Integer nibh ornare nulla eget porttitor porttitor porta molestie. Tristique placerat quis proin tortor id vitae elementum id fringilla. Eget mattis vitae erat quis ultricies. Enim vitae non pellentesque facilisi platea sagittis amet massa fusce. Urna sed et eu gravida non non vulputate tristique.
+                .text-img__img-wrap
+                  .text-img__img.d-if.align-center.justify-center 
+                    img(src="images/dist/blog.webp", alt="")
+            
+      .studies.mt-40
+        .container
+          .text-center 
+            .title Featured news
+          .announcement-wrap
+            each announcement,index in[{name: 'R & D', desc: 'Our products are produced and developed as a result of 7 years of professional arge habit.'},{name: 'PROFESSIONAL',desc:'Real estate was established by a professional team working in commercial areas sm.'},{name: 'PRODUCTION',desc:'All products are produced completely under the control of ouruntil they are made.'}]
+              .announcement-block 
+                a.announcement-block__img.mb-20.d-flex.align-center.justify-center(href="#") 
+                  img(src="images/dist/announcement"+(index+1)+".webp", alt="")
+                a.announcement-block__name.mb-10.fw-bold(href="#")=announcement.name 
+                p=announcement.desc
+              
+      
+                   
+          
+    include includes/footer
+
+
+  include includes/scripts

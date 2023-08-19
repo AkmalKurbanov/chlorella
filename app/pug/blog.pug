@@ -1,0 +1,65 @@
+extends layouts/without-map
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Blog
+block main
+  .wrapper
+    .content
+      
+      include includes/header_without-margin
+
+      .blog
+        .blog__banner.d-flex.align-center.mb-30(style="background-image: url('images/dist/blog_banner.webp')")
+          .container
+            .blog__banner-content
+              .title.fw-bold Blog
+              p Read our blog, stay up to date with the latest news
+      .container
+        .breadcrumbs
+          ul 
+            li 
+              a(href="#") Homepage 
+            li Blog
+      .studies
+        .container
+          .announcement-wrap
+            each announcement,index in[{name: 'R & D', desc: 'Our products are produced and developed as a result of 7 years of professional arge habit.'},{name: 'PROFESSIONAL',desc:'Real estate was established by a professional team working in commercial areas sm.'},{name: 'PRODUCTION',desc:'All products are produced completely under the control of ouruntil they are made.'}]
+              .announcement-block 
+                a.announcement-block__img.mb-20.d-flex.align-center.justify-center(href="#") 
+                  img(src="images/dist/announcement"+(index+1)+".webp", alt="")
+                a.announcement-block__name.mb-10.fw-bold(href="#")=announcement.name 
+                p=announcement.desc
+              .announcement-block 
+                a.announcement-block__img.mb-20.d-flex.align-center.justify-center(href="#") 
+                  img(src="images/dist/announcement"+(index+1)+".webp", alt="")
+                a.announcement-block__name.mb-10.fw-bold(href="#")=announcement.name 
+                p=announcement.desc
+      
+          .pagination.mt-15.mb-45.d-flex.justify-end
+              ul.d-if
+                li.prev
+                  a(href="#") < Prev  
+                li
+                  a(href="#") 1  
+                li.active 
+                  a(href="#") 2
+                li
+                  a(href="#") 3  
+                li ...
+                li
+                  a(href="#") 9 
+                li.next
+                  a(href="#") Next >          
+          
+    include includes/footer
+
+
+  include includes/scripts

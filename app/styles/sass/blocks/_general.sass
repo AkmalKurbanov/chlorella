@@ -1,0 +1,561 @@
+*
+  margin: 0
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+
+html,
+body
+  height: 100%
+  position: relative
+
+body
+  &.no-scroll
+    overflow: hidden
+  &.layout
+    &::before
+      position: absolute
+      content: ''
+      width: 100%
+      height: calc( 100% - 71px )
+      right: 0
+      bottom: 0
+      left: 0
+      background: rgba($sc, .5)
+      z-index: 7
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  transition: $tr
+
+  &.--open
+    transform: translateX(-320px)
+    position: relative
+
+    &:before
+      position: absolute
+      content: ''
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: rgba($bc, .5)
+      z-index: 3
+
+  .content
+    flex: 1 0 auto
+
+img
+  width: 100%
+
+.container
+  width: 100%
+  padding-right: rem(15px)
+  padding-left: rem(15px)
+  margin-right: auto
+  margin-left: auto
+  max-width: rem(1230px)
+  position: relative
+  box-sizing: border-box
+
+  @include lg
+    max-width: rem(960px)
+
+  @include md
+    max-width: rem(720px)
+
+  @include sm
+    max-width: rem(540px)
+
+  @include xs
+    max-width: 100%
+    padding: 0 rem(25)
+
+.btn
+  background: $mc
+  border: none
+  border: rem(1) silid $mc
+  border-radius: rem(50)
+  @include aic-jcc
+  display: inline-flex
+  color: $wc
+  font-size: rem(16)
+  font-weight: 400
+  transition: $tr
+  text-decoration: none
+  outline: none
+  padding: rem(12) rem(40)
+  position: relative
+  overflow: hidden
+  cursor: pointer
+
+  &:before
+    position: absolute
+    top: 0
+    left: -75%
+    z-index: 2
+    display: block
+    content: ""
+    width: 50%
+    height: 100%
+    background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3))
+    transform: skewX(-25deg)
+
+    @keyframes shine
+      to
+        left: 125%
+
+  &:hover
+    box-shadow: 0 5px 12px 0 rgba($mc,.5)
+    opacity: .8
+
+    &:before
+      animation: shine .85s
+
+  &_bordered
+    padding: rem(5) rem(25)
+    border-radius: rem(43)
+    background: none
+    border: rem(1) solid $sc
+    font-size: rem(13)
+    color: $sc
+    background: none
+    min-height: rem(34)
+
+    &:hover
+      background: $mc
+      color: $wc
+      border-color: $mc
+
+  &_solid
+    background: $wc
+    color: $mc
+
+.lang
+  border-radius: rem(43)
+  background: $mc
+  display: inline-flex
+  padding: rem(3)
+  cursor: pointer
+  min-height: rem(34)
+  position: relative
+
+  &__selected
+    background: $wc
+    @include aic-jcc
+    font-size: rem(12)
+    font-weight: 700
+    color: $mc
+    text-transform: uppercase
+    border-radius: rem(17)
+    padding: rem(4) rem(15)
+
+  .icon
+    max-width: rem(24)
+    min-width: rem(24)
+    width: 100%
+    transition: $tr
+
+  &__dropdown
+    position: absolute
+    opacity: 0
+    pointer-events: none
+    border-radius: rem(6)
+    background: $wc
+    box-shadow: 0 5px 12px 0 rgba($sc,.3 )
+    padding: rem(5) 0
+    top: 50%
+    transition: $tr
+    z-index: 2
+
+  &__option
+    font-size: rem(13)
+    font-weight: 700
+    text-transform: uppercase
+    color: $sc
+    padding: rem(4) rem(15)
+    transition: $tr
+    display: block
+    text-decoration: none
+
+    &:first-child
+      padding-top: 0
+
+    &:last-child
+      padding-bottom: 0
+    &:hover
+      color: $mc
+
+  &.open
+    .icon
+      transform: rotate(180deg)
+    .lang__dropdown
+      opacity: 1
+      pointer-events: inherit
+      top: calc( 100% + 5px )
+
+.cart-btn
+  border-radius: 100%
+  background: #686868
+  max-width: rem(34)
+  min-width: rem(34)
+  width: 100%
+  height: rem(34)
+  position: relative
+
+  &__count
+    position: absolute
+    width: rem(17)
+    height: rem(17)
+    background: $mc
+    color: $wc
+    font-size: rem(10)
+    font-weight: 700
+    border-radius: 100%
+    left: 0
+    top: rem(-11)
+
+.icon
+  @include aic-jcc
+
+.title
+  font-size: rem(35)
+  margin-bottom: rem(35)
+  font-weight: 500
+
+  @include lg
+    font-size: rem(30)
+
+  @include xs
+    font-size: rem(28)
+    margin-bottom: rem(20)
+
+  &.fw-bold
+    font-weight: 700!important
+
+  &_light
+    color: $wc
+
+  &_accent
+    color: $mc
+
+.swiper-pagination-bullets
+  span
+    width: rem(12)
+    height: rem(12)
+    opacity: 0.5
+    background: $wc
+    margin: 0 rem(12)!important
+    transition: $tr
+
+    &:hover
+      opacity: 1
+
+    &.swiper-pagination-bullet-active
+      background: $wc
+      opacity: 1
+
+.social
+  ul
+    padding: 0
+    li
+      list-style: none
+      margin-right: rem(8)
+
+      &:last-child
+        margin-right: 0
+      a
+        @include aic-jcc
+        max-width: rem(30)
+        min-width: rem(30)
+        height: rem(30)
+        width: 100%
+        border-radius: 100%
+        background: $mc
+
+        @include lg
+          max-width: rem(25)
+          min-width: rem(25)
+          height: rem(25)
+
+        @include sm
+          max-width: rem(30)
+          min-width: rem(30)
+          height: rem(30)
+
+        svg
+          path
+            fill: $wc
+            transition: $tr
+        &:hover
+          svg
+            path
+              fill: $sc
+  &_light
+    ul
+      li
+        a
+          background: $wc
+
+          svg
+            path
+              fill: $mc
+
+.breadcrumbs
+  margin-bottom: rem(35)
+
+  @include xs
+    margin-bottom: rem(25)
+
+  ul
+    padding: 0
+    @include aic
+
+    li
+      color: $mc
+      list-style-type: none
+      position: relative
+      font-weight: 600
+      padding-right: rem(10)
+      margin-right: rem(5)
+
+      @include xs
+        font-size: rem(12)
+
+      &:after
+        position: absolute
+        content: '/'
+        color: $sc
+        right: 0
+
+      &:last-child
+        padding-right: 0
+        margin-right: 0
+
+        &:after
+          display: none
+
+        &:hover
+          cursor: not-allowed
+
+      a
+        font-weight: 600
+        text-decoration: none
+        color: $sc
+        transition: $tr
+        &:hover
+          color: $mc
+
+.pagination
+  @include md
+    justify-content: center
+    margin-bottom: rem(30) !important
+  ul
+    padding: 0
+    li
+      color: #939393
+      list-style: none
+      @include aic
+      margin-right: rem(12)
+
+      @include xs
+        margin-right: rem(5)
+
+      &:last-child
+        margin-right: 0
+
+      a
+        min-width: rem(45)
+        width: 100%
+        height: rem(45)
+        border-radius: rem(50)
+        transition: $tr
+        @include aic-jcc
+        color: $mc
+        font-weight: 500
+        text-decoration: none
+
+        @include xs
+          min-width: rem(25)
+          height: rem(25)
+          border-radius: rem(30)
+          font-size: rem(12)
+
+        &:hover
+          background: $mc
+          color: $wc
+
+      &.active
+        a
+          color: $wc
+          background: $mc
+
+      &.prev,
+      &.next
+        a
+          background: $mc
+          min-width: rem(95)!important
+          color: $wc
+
+.select
+  cursor: pointer
+  border-radius: rem(45)
+  background: $wc
+  border: 1px solid rgba(22, 28, 28, 0.50)
+  max-width: rem(220)
+  min-width: rem(220)
+  width: 100%
+  min-height: rem(45)
+  max-height: rem(45)
+  @include aic
+  padding: rem(15)
+  position: relative
+
+  &__selected
+    @include aic-jfcsb
+    display: inline-flex
+    width: 100%
+
+    span
+      font-weight: 600
+    .icon
+      width: rem(20)
+      height: rem(20)
+      transition: $tr
+      svg
+        width: 100%
+
+  &__dropdown
+    background: $wc
+    border-radius: rem(20)
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.35)
+    width: 100%
+    position: absolute
+    left: 0
+    overflow: hidden
+    z-index: 1
+    transition: $tr
+    top: 100%
+    opacity: 0
+    pointer-events: none
+
+  &__option
+    color: $sc
+    font-size: rem(14)
+    padding: rem(12) rem(19)
+    border-bottom: rem(1) solid #E5E5E5
+    transition: $tr
+
+    &:hover
+      background: #E5E5E5
+
+    &:last-child
+      border: none
+
+  &__price-input-wrap
+    margin-bottom: rem(12)
+    span
+      @include aic
+      font-weight: 500
+
+      input
+        width: rem(50)
+        border: none
+        font-weight: 500
+
+  &__price
+    padding: rem(25) rem(15)
+
+    #amount
+      margin-bottom: rem(10)!important
+      font-weight: 500!important
+      color: $sc!important
+      font-size: rem(16)!important
+      display: flex!important
+      align-items: center!important
+      justify-content: space-between!important
+
+    #slider-range
+      background: #b5b5b579
+      height: 4px
+      border: none
+      .ui-slider-range
+        height: rem(4)
+        background: $mc
+      span
+        width: 12px
+        height: 12px
+        border-radius: 100%
+        background: $mc
+        border: none
+
+        &.ui-state-focus
+          outline: rem(1) solid $sc!important
+
+  &.open
+    .select__selected
+      .icon
+        transform: rotate(180deg)
+    .select__dropdown
+      top: calc( 100% + 14px )
+      opacity: 1
+      pointer-events: inherit
+
+.back-button
+  text-decoration: none
+  color: $sc
+  line-height: rem(20)
+  transition: $tr
+
+  &:hover
+    color: $mc
+
+.input,
+.textarea
+  input,
+  textarea
+    width: 100%
+    border-radius: rem(30)
+    border: rem(1) solid #7A7A7A
+
+    &::placeholder
+      color: #737373
+
+.input
+  position: relative
+
+  input
+    height: rem(60)
+    padding: 0 rem(36) 0 rem(18)
+
+  &__message
+    font-size: rem(10)
+    position: absolute
+    top: calc( 100% + 3px )
+
+  &.error
+    input
+      border-color: #fd384c
+
+    .input__message
+      color: #fd384c
+      display: block
+
+  &_light
+    input
+      border-color: $wc
+      background: rgba(255, 255, 255, 0.30)
+      color: $wc
+
+      &::placeholder
+        color: $wc
+
+.textarea
+  @include aic-jcc
+
+  textarea
+    min-height: rem(100)
+    resize: vertical
+    padding-top: rem(10)
+    padding-left: rem(18)

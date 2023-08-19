@@ -1,0 +1,198 @@
+extends layouts/without-input-range
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Products
+block main
+  .wrapper
+    .content
+
+      
+      include includes/header
+      
+      
+      .container
+        .breadcrumbs.d-flex.align-center.justify-between
+          ul 
+            li 
+              a(href="#") Homepage
+            li Products
+          .mobile-filter-control.align-center.justify-center.ml-15
+            .mobile-filter-control__button.d-flex.align-center.justify-center.mr-10.filter-js
+              svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M8.12508 4.45832C7.91512 4.45832 7.71376 4.54173 7.56529 4.69019C7.41682 4.83866 7.33341 5.04002 7.33341 5.24999C7.33341 5.45995 7.41682 5.66131 7.56529 5.80978C7.71376 5.95825 7.91512 6.04165 8.12508 6.04165C8.33504 6.04165 8.53641 5.95825 8.68487 5.80978C8.83334 5.66131 8.91675 5.45995 8.91675 5.24999C8.91675 5.04002 8.83334 4.83866 8.68487 4.69019C8.53641 4.54173 8.33504 4.45832 8.12508 4.45832ZM5.88466 4.45832C6.04822 3.99477 6.35154 3.59337 6.75281 3.30945C7.15407 3.02552 7.63353 2.87305 8.12508 2.87305C8.61664 2.87305 9.09609 3.02552 9.49736 3.30945C9.89862 3.59337 10.2019 3.99477 10.3655 4.45832H16.0417C16.2517 4.45832 16.4531 4.54173 16.6015 4.69019C16.75 4.83866 16.8334 5.04002 16.8334 5.24999C16.8334 5.45995 16.75 5.66131 16.6015 5.80978C16.4531 5.95825 16.2517 6.04165 16.0417 6.04165H10.3655C10.2019 6.5052 9.89862 6.9066 9.49736 7.19053C9.09609 7.47446 8.61664 7.62693 8.12508 7.62693C7.63353 7.62693 7.15407 7.47446 6.75281 7.19053C6.35154 6.9066 6.04822 6.5052 5.88466 6.04165H4.95841C4.74845 6.04165 4.54709 5.95825 4.39862 5.80978C4.25016 5.66131 4.16675 5.45995 4.16675 5.24999C4.16675 5.04002 4.25016 4.83866 4.39862 4.69019C4.54709 4.54173 4.74845 4.45832 4.95841 4.45832H5.88466ZM12.8751 9.20832C12.6651 9.20832 12.4638 9.29173 12.3153 9.44019C12.1668 9.58866 12.0834 9.79002 12.0834 9.99999C12.0834 10.21 12.1668 10.4113 12.3153 10.5598C12.4638 10.7082 12.6651 10.7917 12.8751 10.7917C13.085 10.7917 13.2864 10.7082 13.4349 10.5598C13.5833 10.4113 13.6667 10.21 13.6667 9.99999C13.6667 9.79002 13.5833 9.58866 13.4349 9.44019C13.2864 9.29173 13.085 9.20832 12.8751 9.20832ZM10.6347 9.20832C10.7982 8.74477 11.1015 8.34337 11.5028 8.05944C11.9041 7.77552 12.3835 7.62305 12.8751 7.62305C13.3666 7.62305 13.8461 7.77552 14.2474 8.05944C14.6486 8.34337 14.9519 8.74477 15.1155 9.20832H16.0417C16.2517 9.20832 16.4531 9.29173 16.6015 9.44019C16.75 9.58866 16.8334 9.79002 16.8334 9.99999C16.8334 10.21 16.75 10.4113 16.6015 10.5598C16.4531 10.7082 16.2517 10.7917 16.0417 10.7917H15.1155C14.9519 11.2552 14.6486 11.6566 14.2474 11.9405C13.8461 12.2245 13.3666 12.3769 12.8751 12.3769C12.3835 12.3769 11.9041 12.2245 11.5028 11.9405C11.1015 11.6566 10.7982 11.2552 10.6347 10.7917H4.95841C4.74845 10.7917 4.54709 10.7082 4.39862 10.5598C4.25016 10.4113 4.16675 10.21 4.16675 9.99999C4.16675 9.79002 4.25016 9.58866 4.39862 9.44019C4.54709 9.29173 4.74845 9.20832 4.95841 9.20832H10.6347ZM8.12508 13.9583C7.91512 13.9583 7.71376 14.0417 7.56529 14.1902C7.41682 14.3387 7.33341 14.54 7.33341 14.75C7.33341 14.96 7.41682 15.1613 7.56529 15.3098C7.71376 15.4582 7.91512 15.5417 8.12508 15.5417C8.33504 15.5417 8.53641 15.4582 8.68487 15.3098C8.83334 15.1613 8.91675 14.96 8.91675 14.75C8.91675 14.54 8.83334 14.3387 8.68487 14.1902C8.53641 14.0417 8.33504 13.9583 8.12508 13.9583ZM5.88466 13.9583C6.04822 13.4948 6.35154 13.0934 6.75281 12.8094C7.15407 12.5255 7.63353 12.373 8.12508 12.373C8.61664 12.373 9.09609 12.5255 9.49736 12.8094C9.89862 13.0934 10.2019 13.4948 10.3655 13.9583H16.0417C16.2517 13.9583 16.4531 14.0417 16.6015 14.1902C16.75 14.3387 16.8334 14.54 16.8334 14.75C16.8334 14.96 16.75 15.1613 16.6015 15.3098C16.4531 15.4582 16.2517 15.5417 16.0417 15.5417H10.3655C10.2019 16.0052 9.89862 16.4066 9.49736 16.6905C9.09609 16.9745 8.61664 17.1269 8.12508 17.1269C7.63353 17.1269 7.15407 16.9745 6.75281 16.6905C6.35154 16.4066 6.04822 16.0052 5.88466 15.5417H4.95841C4.74845 15.5417 4.54709 15.4582 4.39862 15.3098C4.25016 15.1613 4.16675 14.96 4.16675 14.75C4.16675 14.54 4.25016 14.3387 4.39862 14.1902C4.54709 14.0417 4.74845 13.9583 4.95841 13.9583H5.88466Z' fill='white')
+
+            .mobile-filter-control__button.d-flex.align-center.justify-center.sorting-js 
+              svg(width='14' height='12' viewBox='0 0 14 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M7.0957 4.03807C6.93533 3.87761 6.84521 3.66001 6.84521 3.43312C6.84521 3.20624 6.93533 2.98864 7.0957 2.82818L9.6627 0.261222C9.7416 0.179502 9.836 0.114312 9.9404 0.0694717C10.0448 0.0246217 10.1571 0.00102186 10.2707 3.18558e-05C10.3843 -0.000948144 10.497 0.020692 10.6022 0.063722C10.7073 0.106742 10.8029 0.170282 10.8832 0.250612C10.9635 0.330952 11.0271 0.426492 11.0701 0.531652C11.1131 0.636802 11.1348 0.749472 11.1338 0.863092C11.1328 0.976702 11.1092 1.08898 11.0643 1.19337C11.0195 1.29776 10.9543 1.39218 10.8726 1.47111L8.3056 4.03807C8.1452 4.19848 7.9276 4.28859 7.7007 4.28859C7.4738 4.28859 7.2562 4.19848 7.0957 4.03807Z' fill='white')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M13.4394 4.03804C13.2789 4.19845 13.0613 4.28856 12.8345 4.28856C12.6076 4.28856 12.39 4.19845 12.2295 4.03804L9.6626 1.47108C9.5067 1.3097 9.4204 1.09356 9.4224 0.869212C9.4243 0.644862 9.5143 0.430262 9.673 0.271612C9.8316 0.112972 10.0462 0.0229818 10.2706 0.0210318C10.4949 0.0190818 10.7111 0.105322 10.8724 0.261192L13.4394 2.82815C13.5998 2.9886 13.6899 3.2062 13.6899 3.43309C13.6899 3.65998 13.5998 3.87758 13.4394 4.03804Z' fill='white')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M10.2675 1.72168C10.4944 1.72168 10.7121 1.81183 10.8725 1.97229C11.033 2.13276 11.1232 2.3504 11.1232 2.57733V9.4226C11.1232 9.6495 11.033 9.8671 10.8725 10.0276C10.7121 10.1881 10.4944 10.2782 10.2675 10.2782C10.0406 10.2782 9.8229 10.1881 9.6625 10.0276C9.502 9.8671 9.4119 9.6495 9.4119 9.4226V2.57733C9.4119 2.3504 9.502 2.13276 9.6625 1.97229C9.8229 1.81183 10.0406 1.72168 10.2675 1.72168ZM6.59419 7.962C6.7546 8.1224 6.84471 8.34 6.84471 8.5669C6.84471 8.7938 6.7546 9.0114 6.59419 9.1718L4.02723 11.7388C3.86585 11.8947 3.64972 11.9809 3.42537 11.979C3.20102 11.977 2.98641 11.887 2.82776 11.7284C2.66912 11.5697 2.57913 11.3551 2.57718 11.1308C2.57523 10.9064 2.66148 10.6903 2.81734 10.5289L5.3843 7.962C5.54476 7.8015 5.76236 7.7114 5.98924 7.7114C6.21613 7.7114 6.43373 7.8015 6.59419 7.962Z' fill='white')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M0.25052 7.9619C0.41098 7.8015 0.62858 7.7114 0.85547 7.7114C1.08236 7.7114 1.29996 7.8015 1.46042 7.9619L4.02737 10.5289C4.1091 10.6078 4.17428 10.7023 4.21913 10.8066C4.26397 10.911 4.28757 11.0233 4.28856 11.1369C4.28955 11.2505 4.2679 11.3632 4.22488 11.4684C4.18185 11.5735 4.11832 11.6691 4.03798 11.7494C3.95764 11.8297 3.8621 11.8933 3.75695 11.9363C3.65179 11.9793 3.53912 12.001 3.42551 12C3.31189 11.999 3.19961 11.9754 3.09522 11.9306C2.99083 11.8857 2.89641 11.8205 2.81748 11.7388L0.25052 9.1718C0.09011 9.0114 0 8.7938 0 8.5669C0 8.34 0.09011 8.1224 0.25052 7.9619Z' fill='white')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M3.4223 10.2782C3.19537 10.2782 2.97773 10.1881 2.81727 10.0276C2.6568 9.8671 2.56665 9.6495 2.56665 9.4226V2.57733C2.56665 2.3504 2.6568 2.13276 2.81727 1.97229C2.97773 1.81183 3.19537 1.72168 3.4223 1.72168C3.64924 1.72168 3.86687 1.81183 4.02734 1.97229C4.18781 2.13276 4.27796 2.3504 4.27796 2.57733V9.4226C4.27796 9.6495 4.18781 9.8671 4.02734 10.0276C3.86687 10.1881 3.64924 10.2782 3.4223 10.2782Z' fill='white')
+
+      .filter.mb-35
+        .container.filter__flex-wrap.d-flex.justify-between
+          //- .icon.close 
+          //-   svg(width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+          //-     path(d='M1 1L13 13M13 1L1 13' stroke='black' stroke-width='2' stroke-linecap='round')
+
+          .filter__filter.d-flex
+            .select.select-js.mr-10 
+              .select__selected
+                input(type="hidden")
+                span Type
+                .icon
+                  svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M3 6L9.5 12L16 6' stroke='#161C1C' stroke-width='2')
+
+              .select__dropdown
+                .select__option(data-value="capsules") capsules
+                .select__option(data-value="coffee") coffee
+                .select__option(data-value="Oil") Oil
+      
+            .select.select-js.mr-10 
+              .select__selected
+                input(type="hidden")
+                span Price
+                .icon
+                  svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M3 6L9.5 12L16 6' stroke='#161C1C' stroke-width='2')
+
+              .select__dropdown
+                .select__price
+                  .select__price-input-wrap.d-flex.justify-between
+                    span 
+                      |$ 
+                      input(type="text" id="amount_min" class="amount")
+                    span 
+                      |$ 
+                      input(type="text" id="amount_max" class="amount")
+                  #slider-range
+
+            .select.select-js.mr-10 
+              .select__selected
+                input(type="hidden")
+                span In Stock Only
+                .icon
+                  svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M3 6L9.5 12L16 6' stroke='#161C1C' stroke-width='2')
+
+              .select__dropdown
+                .select__option(data-value="In Stock Only 1") In Stock Only 1
+                .select__option(data-value="In Stock Only 2") In Stock Only 2
+                .select__option(data-value="In Stock Only 3") In Stock Only 3
+
+            .filter__clear.mr-10 
+              span Clear All
+              .icon 
+                svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M4 4L16 16' stroke='white' stroke-width='2' stroke-linecap='round')
+                  path(d='M16 4L4 16' stroke='white' stroke-width='2' stroke-linecap='round')
+
+          .filter__sorting
+            .select.select-js 
+              .select__selected
+                input(type="hidden")
+                span Sort by
+                .icon
+                  svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M3 6L9.5 12L16 6' stroke='#161C1C' stroke-width='2')
+
+              .select__dropdown
+                .select__option(data-value="Popular") Popular
+                .select__option(data-value="Rating") Rating
+                .select__option(data-value="Price: low to high") Price: low to high
+                .select__option(data-value="Price: High to low") Price: High to low
+                .select__option(data-value="Latest") Latest
+      
+                              
+
+
+
+
+      .container
+        .card-wrap
+          each cart in[1,2,3,4,4,6,7,8]
+            .card 
+              .card__top 
+                a.card__img.mb-10(href="#") 
+                  img(src="images/dist/card.webp", alt="")
+                .card__info.text-center
+                  a.card__name.mb-10(href="#")  Omega 3
+              .card__bottom.text-center
+                .card__price.fw-bold 124 $  
+        .pagination.mt-15.mb-45.d-flex.justify-end
+          ul.d-if
+            li.prev
+              a(href="#") < Prev  
+            li
+              a(href="#") 1  
+            li.active 
+              a(href="#") 2
+            li
+              a(href="#") 3  
+            li ...
+            li
+              a(href="#") 9 
+            li.next
+              a(href="#") Next >
+      
+    include includes/footer
+
+  
+  include includes/scripts
+  //- script(src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js")
+  script(src="https://code.jquery.com/jquery-3.6.2.js") 
+  script(src="https://code.jquery.com/ui/1.13.2/jquery-ui.js")
+  script.
+    $(function() {
+    const sliderRange = $("#slider-range");
+    sliderRange.slider({
+    range: true,
+    min: 0,
+    max: 1000,
+    values: [40, 190],
+    change: function(event, ui) {
+    $("#amount_min").val(ui.values[0]);
+    $("#amount_max").val(ui.values[1]);
+    },
+    create: function() {
+    let values = $(this).slider("option", "values");
+    $("#amount_min").val(values[0]);
+    $("#amount_max").val(values[1]);
+    }
+    });
+    // Input value to Integer.
+    const toInt = input => {
+    let val = Number(input);
+    if (Number.isInteger(val)) {
+    return Number(val);
+    } else {
+    return 0;
+    }
+    };
+    // Bind onchange event to inputs.
+    $("#amount_min").change(function() {
+    let amount_min = toInt($(this).val());
+    let amount_max = toInt($("#amount_max").val());
+    if (amount_min >= amount_max) {
+    amount_min = amount_max;
+    }
+    sliderRange.slider("values", 0, amount_min);
+    });
+    $("#amount_max").change(function() {
+    let amount_max = toInt($(this).val());
+    let amount_min = toInt($("#amount_min").val());
+    if (amount_max <= amount_min) {
+    amount_max = amount_min;
+    }
+    sliderRange.slider("values", 1, amount_max);
+    });
+    });

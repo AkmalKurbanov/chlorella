@@ -1,0 +1,131 @@
+.card-wrap
+  @include fww
+
+  @include xs
+    justify-content: space-between
+
+  .card
+    margin-bottom: rem(30)
+    width: calc( 25% - 26.3px )
+    margin-right: rem(35)
+
+    @include lg
+      width: calc( 25% - 15px )
+      margin-right: rem(20)
+      margin-bottom: rem(20)
+
+    @include md
+      width: calc( 33% - 8px )
+      margin-right: rem(15)
+      margin-bottom: rem(15)
+
+    @include sm
+      width: calc( 33% - 5px )
+      margin-right: rem(10)
+      padding: rem(10)
+      margin-bottom: rem(10)
+
+    @include xs
+      padding: rem(20)
+      width: calc( 50% - 10px )
+      margin-right: 0!important
+      margin-bottom: rem(20)
+
+    @media (max-width: 480px)
+      width: 100%
+      max-width: rem(320)
+      margin: auto!important
+      margin-bottom: rem(25) !important  
+      
+    &:nth-child(3n)
+      @include md
+        margin-right: 0
+
+    &:nth-child(4n)
+      margin-right: 0
+
+      @include md
+        margin-right: rem(15)
+        
+      @include sm
+        margin-right: rem(10)
+
+    &__top
+      margin-bottom: rem(5)
+
+    &__img
+      @include sm
+        max-height: rem(150)
+        min-height: rem(150)
+
+      @include xs
+        max-height: rem(200)
+        min-height: rem(200)
+
+      @media (max-width: 480px)
+        max-height: rem(250)
+        min-height: rem(250)
+
+    &:hover
+      .card__img
+        @include sm
+          transform: translateY(-3px)
+
+.card
+  border-radius: rem(10)
+  background: $wc
+  padding: rem(20)  
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.35)
+
+  &:hover
+    .card__img
+      transform: translateY(-5px)
+
+      &:before
+        animation: shine .85s
+
+
+  &__top
+    margin-bottom: rem(5)
+
+  &__img
+    max-height: rem(200)
+    min-height: rem(200)
+    height: 100%
+    position: relative
+    @include aic-jcc
+    transition: $tr
+    overflow: hidden
+
+    
+
+    &:before
+      position: absolute
+      top: 0
+      left: -75%
+      z-index: 2
+      display: block
+      content: ""
+      width: 50%
+      height: 100%
+      background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.3))
+      transform: skewX(-25deg)
+
+    @keyframes shine
+      to
+        left: 125%
+
+    img
+      position: absolute
+      object-fit: cover
+      height: 100%
+      width: 100%
+
+  &__name
+    color: $sc
+    text-decoration: none
+    transition: $tr
+    &:hover
+      color: $mc
+  &__price
+    font-size: rem(20)

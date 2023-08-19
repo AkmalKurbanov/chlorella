@@ -1,0 +1,151 @@
+.footer
+	flex: 0 0 auto
+	background: $mc
+
+	*
+		color: $wc
+	p
+		@include lg
+			font-size: rem(15)
+		@include md
+			font-size: rem(14)
+		@include sm
+			font-size: rem(16)				
+
+	&__wrap
+		@include sm
+			flex-direction: column
+
+
+	&__col
+		width: 27%
+		
+		@include lg
+			width: 30%
+
+		@include md
+			width: 32%
+
+		@include sm
+			width: 100%
+			margin-bottom: rem(40)	
+
+		&:last-child
+			margin-bottom: 0		
+	
+	&__logo
+		max-width: rem(230)
+		width: 100%
+
+		@include md
+			max-width: rem(200)
+
+		@include xs		
+			max-width: rem(230)
+			margin: auto
+
+	.contacts-list
+		li,a
+			color: $wc
+			
+			@include md
+				font-size: rem(13)
+
+			@include sm
+				font-size: rem(16)			
+
+		a
+			&:hover
+				color: $sc
+				svg
+					path
+						fill: $sc
+
+		.icon
+			svg
+				path
+					fill: $wc
+
+	.title
+		font-weight: 500
+		text-transform: none
+		line-height: rem(24)
+		font-size: rem(20)
+		margin-bottom: rem(25)
+		
+		@include md
+			font-size: rem(18)
+
+		@include sm
+			font-size: rem(20)		
+			margin-bottom: rem(15)
+
+	ul
+		padding: 0
+		li
+			list-style-type: none
+
+			a
+				text-decoration: none
+				transition: $tr
+
+				@include md
+					font-size: rem(14)
+				
+				@include sm
+					font-size: rem(16)		
+				
+				&:hover
+					color: $sc
+			
+			&:last-child
+				margin-bottom: 0
+
+.subscribe
+	border-bottom: rem(1) solid $wc
+	display: inline-block
+
+	input
+		color: $wc
+		background: none
+		border: none
+		outline: none
+		padding: rem(12) rem(10)
+		
+		@include md
+			font-size: rem(12)
+			padding: rem(7) rem(5)
+
+		@include sm
+			font-size: rem(15)			
+			padding: rem(12) rem(10)
+		
+		&::placeholder
+			color: $wc
+			@include md
+				font-size: rem(12)
+
+			@include sm
+				font-size: rem(15)			
+
+	button
+		border: none
+		outline: none
+		background: none
+		cursor: pointer
+		.icon
+			transition: $tr
+			
+			@include md
+				width: 12px
+				height: 12px
+				svg
+					width: 100%
+
+			@include md
+				width: auto
+				height: auto
+
+		&:hover
+			.icon
+				transform: translate(2px,-2px)

@@ -1,0 +1,76 @@
+extends layouts/without-map
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Cart
+block main
+  .wrapper
+    .content
+      
+      include includes/header
+
+      .container
+        a.back-button.d-if.align-center.fw-bold(href="#")
+          .icon.mr-10
+            svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+              g(clip-path='url(#clip0_400_701)')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M8.29315 12.707C8.10567 12.5195 8.00036 12.2652 8.00036 12C8.00036 11.7348 8.10567 11.4805 8.29315 11.293L13.9501 5.63601C14.0424 5.5405 14.1527 5.46431 14.2747 5.41191C14.3967 5.3595 14.528 5.33191 14.6607 5.33076C14.7935 5.3296 14.9252 5.3549 15.0481 5.40519C15.171 5.45547 15.2826 5.52972 15.3765 5.62361C15.4704 5.71751 15.5447 5.82916 15.595 5.95205C15.6452 6.07495 15.6705 6.20663 15.6694 6.33941C15.6682 6.47219 15.6407 6.60341 15.5882 6.72541C15.5358 6.84742 15.4597 6.95776 15.3641 7.05001L10.4141 12L15.3641 16.95C15.5463 17.1386 15.6471 17.3912 15.6448 17.6534C15.6425 17.9156 15.5374 18.1664 15.352 18.3518C15.1666 18.5372 14.9157 18.6424 14.6535 18.6447C14.3913 18.647 14.1387 18.5462 13.9501 18.364L8.29315 12.707Z' fill='#7DAD52')
+              defs
+                clippath#clip0_400_701
+                  rect(width='24' height='24' fill='white' transform='translate(24) rotate(90)')
+
+          | Back To Shop
+         
+      .cart 
+        .container 
+          .cart__flex-wrap.d-flex.mt-20.mb-30
+            .cart__col
+              
+              each item in [1,2,3]
+                .cart__order-item.mb-20.d-flex.align-strech
+                  
+                  .cart__order-img.d-flex.align-center.justify-center
+                    img(src="images/dist/cart.webp", alt="")
+                  
+                  .cart__order-info.p-30
+                    .cart__order-delete 
+                      .icon   
+                        svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          path(d='M4 6H20L18.42 20.22C18.3658 20.7094 18.1331 21.1616 17.7663 21.49C17.3994 21.8184 16.9244 22 16.432 22H7.568C7.07564 22 6.60056 21.8184 6.23375 21.49C5.86693 21.1616 5.63416 20.7094 5.58 20.22L4 6Z' stroke='#7DAD52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M7.345 3.147C7.50675 2.80397 7.76271 2.514 8.083 2.31091C8.4033 2.10782 8.77474 2 9.154 2H14.846C15.2254 1.99981 15.5971 2.10755 15.9176 2.31064C16.2381 2.51374 16.4942 2.80381 16.656 3.147L18 6H6L7.345 3.147Z' stroke='#7DAD52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M2 6H22' stroke='#7DAD52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M10 11V16' stroke='#7DAD52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M14 11V16' stroke='#7DAD52' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+
+                    .cart__order-name.mb-20.fw-bold Nigella Mix Capsule
+                    .cart__order-code.mb-20
+                      span Product Code:
+                      | 8682368236134
+                    .cart__order-price
+                      span $
+                      | 61
+
+
+            .cart__col
+              .cart__order-list.p-25.d-flex.flex-column.justify-between
+                div
+                  .title.title_light.mb-25 Order 
+                  ul 
+                    each item in['Subtotal','Taxes','Total']
+                      li.d-flex.align-center.justify-between.mb-20
+                        span=item
+                        span $ 150.00
+                .text-center.mt-25       
+                  a.btn.btn_solid(href="#") Checkout
+      
+    include includes/footer
+
+
+  include includes/scripts

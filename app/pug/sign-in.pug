@@ -1,0 +1,33 @@
+extends layouts/without-map
+
+block vars
+  - var description = '';
+  - var keywords= '';
+  - var ogtitle = '';
+  - var ogtype = '';
+  - var ogurl = '';
+  - var ogimg = '';
+
+block title
+  | Sign in
+block main
+  .wrapper
+    .content
+      
+      include includes/header_without-margin
+
+      .sign-in(style="background-image: url('images/dist/sign-in.webp')")
+        .container
+          form(action="")
+            .sign-in__fields-wrap.d-flex.justify-between
+              .input.input_light 
+                input(type="text" placeholder="Enter your ID")  
+              button(type="submit").btn.ml-25 Send message 
+
+
+
+      
+    include includes/footer
+
+
+  include includes/scripts
